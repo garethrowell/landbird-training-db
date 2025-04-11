@@ -1,0 +1,34 @@
+
+------------------------------
+Breeding Birds SOP - Task List
+------------------------------
+
+DM SOP
+
+Notes about edits on SOP#6 Data Management
+     Need VPN
+	      p. 3 "The database application requires that users be on the NPS domain (public access is not permitted)."
+	 Navigating to the Landbirds application
+	      I added a description of how to find the application starting with the IRMA home page. 
+	 To enter data, you must have permission to be on the database
+	      P. 3 "Users must be given permissions to use the HTLN_Landbirds Database by the IRMA systems manager. "
+	 Observer initials
+	      The procedure for adding new obsevers and their initials is shown with a figure and description.
+	 PeriodID needs to be created
+	      An entirely new section was added to describe what PeriodIDs are and how to create them.
+	 Walk through the steps to inputting data
+	      Here I've limited it to a couple figures and text describe examples of inputting bird observations and habitat data.
+	 Replacing Azure Data Studio with SSMS
+	      I replaced the Azure Data Studio screenshots with the same figures but using SQL Server Management Studio (SSMS). I need to use SMSS in the SOP for now since its on the NPS approved software list
+	 Breeding Bird Access database for QAP and Operational Review details
+	      This was a bit of a mess. Most of it was written by Jan Hinsey for the aquatic databases. She wrote on QA/QC without ever distinguishing between the two and the outcome was hopelessly muddled. Consequently, I've yanked the whole section. We cover quality control under the sections for data verification and data validation. Quality assurance is addressed in the QAP. 
+     Protocol Traceability
+		  I rewrote the section called 'Protocol Traceability' which addresses the tables containing details about protocol references including narratives, SOPs and QAPs where appropriate. 
+     Operational Review
+		  I also separated out the Operational Review section, since its required.  It should be described in SOP# 8 - Reporting Requirements and also recorded here in the database in the SamplingPeriod table simply as Yes/No. I wrote a couple of sentences about it and added a figure.
+	 EML component 
+	      I decided to just edit the EML metadata in a text editor for the title, abstract and other onetime XML records and then use a couple of Python scripts to generate the taxonomy. I started with an example from Judd Patterson as my template. I describe this procedure in a few sentences in the SOP. As soon as Tani / Fagan assign a DOI to the protocol narrative, I will finish the data package for HTLN_Landbirds and uploaded it with a complete EML metadata record and the data in .csv format. The IRMA record will be referenced in the EML section. I will validate the EML file against the EML parser provided the Ecoinformatics group https://eml.ecoinformatics.org/	
+
+		  
+	 
+	 

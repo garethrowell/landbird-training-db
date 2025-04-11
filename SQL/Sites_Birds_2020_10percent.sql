@@ -1,0 +1,37 @@
+
+
+
+USE HTLN_LandBirds;
+
+SELECT P.LocationName AS Plot,  E.EventName AS Event, E.Temperature_C,  
+    W.Code AS Wind, R.Code AS Precip, E.Clouds_pct AS Percent_Cloud, N.Code AS Noise, B.ObservationNumber, I.Name AS Interval, 
+    S.TaxonCode AS AOUCode, B.Distance, D.Code AS DetectionType, X.Name AS Sex, 
+	A.Name AS Age, B.FlockSize, B.IsPreviousPlot, B.IsFlyover, B.Comments
+
+FROM dbo.BirdSamplingEvent AS E
+  JOIN dbo.BirdObservation as B
+    ON E.ID = B.BirdSamplingEventID
+  JOIN LU.BirdSpecies AS S
+    ON B.BirdSpeciesID = S.ID
+  JOIN dbo.Plot AS P
+    ON E.PlotID = P.ID
+  JOIN LU.Noise AS N
+    ON E.NoiseID = N.ID
+  JOIN LU.Rain AS R
+    ON E.RainID = R.ID
+  JOIN LU.Wind AS W
+	ON E.WindID = W.ID
+  JOIN LU.Interval AS I
+	ON B.IntervalID = I.ID
+  JOIN LU.Sex AS X
+    ON B.SexID = X.ID
+  JOIN LU.DetectionType AS D
+    ON B.DetectionTypeID = D.ID
+  JOIN LU.Age AS A
+    ON B.AgeID = A.ID
+
+WHERE (E.EventDateTime > CAST('20200101' AS datetime))
+   AND ((P.LocationName = 'GWCA17') OR (P.LocationName = 'GWCA13') OR (P.LocationName = 'GWCA46') OR (P.LocationName = 'GWCA27') OR (P.LocationName = 'GWCA26')
+   OR (P.LocationName = 'GWCA68') OR (P.LocationName = 'GWCA39') OR (P.LocationName = 'WICR2') OR (P.LocationName = 'WICR12') OR (P.LocationName = 'WICR7')
+   OR (P.LocationName = 'WICR36'))
+ORDER BY P.LocationName,  E.EventName,  B.ObservationNumber;

@@ -1,0 +1,5 @@
+Manifest file for EVER_AA_datapackage.zip created on 2022-04-05 15:04:25
+
+EVER_AA_metadata.xml (615903 bytes)
+data/qry_Export_AA_Plots.csv (153081 bytes)
+data/qry_Export_AA_VegetationDetail.csv (324730 bytes)
