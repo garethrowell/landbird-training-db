@@ -1,0 +1,19 @@
+
+
+---------
+notes.txt
+---------
+
+--------------------------------------------------------------
+
+Getting started!!
+
+1. Do something about WIFI
+
+2. Do something about a computer
+
+3. Figure out what operating system
+
+4. Create a data science laboratory
+
+
